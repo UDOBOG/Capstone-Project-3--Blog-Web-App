@@ -1,0 +1,309 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main{
+    flex: 1;
+}
+
+.header {
+    background-color: rgb(74, 119, 11);
+    margin: 0;
+}
+
+.header-btn {
+    width: 20vh;
+    border: 1px solid beige;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#submit-button {
+    background-color: #619d0c;
+    height: 40px;
+    width: 160px;
+    text-transform: uppercase;
+    font-size: medium;
+    font-weight: 700;
+    color: beige;
+    letter-spacing: 1px;
+}
+
+a {
+    text-decoration: none;
+    color: beige;
+}
+
+ul {
+    list-style-type: disc;
+
+}
+
+body {
+
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0em;
+    color: #333;
+    background-color: rgb(97, 157, 12);
+    opacity: 1;
+
+    background-image:
+        radial-gradient(circle, transparent 20%, #619d0c 20%, #619d0c 80%, transparent 80%, transparent),
+        radial-gradient(circle, transparent 20%, #619d0c 20%, #619d0c 80%, transparent 80%, transparent),
+        linear-gradient(rgba(255, 0, 0, 0.2) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(255, 0, 0, 0.2) 2px, #619d0c 2px);
+
+    background-position:
+        0 0,
+        25px 25px,
+        0 -1px,
+        -1px 0;
+
+    background-size:
+        50px 50px,
+        50px 50px,
+        25px 25px,
+        25px 25px;
+}
+
+
+.main-container {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: 1fr;
+    color: beige;
+    margin-bottom: 5vh;
+}
+
+.table-of-contents,
+.table-for-writing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.table-of-contents {
+    font-size: 20px;
+
+}
+
+.table-of-contents h3,
+#blog-link {
+    text-decoration: underline;
+}
+
+#blog-link {
+    margin-right: 5px;
+}
+
+.table-of-contents img {
+    height: 20px;
+    width: 20px;
+
+}
+
+.table-of-contents li {
+    margin-bottom: 10px;
+}
+
+.error1{
+    font-size: large;
+    font-weight: 500;
+    color: red;
+    margin: 0;
+}
+.error-box{
+    background-color: beige;
+    padding: 2px;
+    margin-bottom: 15px;
+}
+
+.table-for-writing {
+    font-size: large;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+#blog-title,
+#blog-content {
+    border-radius: 8px;
+    font-size: large;
+}
+
+#blog-title {
+    height: 25px;
+}
+
+.intro {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: beige;
+    font-size: large;
+    padding: 0;
+    margin-bottom: 10vh;
+}
+
+.intro-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-size: larger;
+    text-align: left;
+}
+
+.left-side,
+.right-side {
+    width: 45%;
+    padding: 30px;
+}
+
+.p1,
+.p2 {
+    width: 60%;
+}
+
+.p2 {
+    position: relative;
+    padding: 1em;
+    margin: 2em 0;
+}
+
+.p2::before,
+.p2::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 3px solid red;
+}
+
+.p2::before {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+}
+
+.p2::after {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+}
+
+
+.right-side {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+.table-for-writing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#blogForm {
+    width: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#blog-title {
+    width: 100%;
+}
+
+#blog-content {
+    width: 100%;
+    height: 35vh;
+}
+
+button {
+  cursor: pointer;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#blog-post-title, #blog-post-content {
+    font-size: x-large;
+    color: beige;
+    margin-left: 30px;
+    margin-bottom: 5vh;
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    float: none;
+    color: beige;
+    border-top: beige solid 1px;
+    font-size: large;
+    height: 8vh;
+}
+
+.contact-text{
+    color: beige;
+    font-size: x-large;
+    margin: 30px;
+}
+
+span{
+    color: #333;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-container {
+    grid-template-columns: 1fr; /* stack contents vertically */
+    grid-template-rows: auto auto;
+  }
+
+  .intro-row {
+    flex-direction: column;
+  }
+
+  .left-side,
+  .right-side,
+  .p1,
+  .p2 {
+    width: 90%;
+    text-align: center;
+    padding: 1em;
+  }
+
+  #blogForm {
+    width: 90vw;
+  }
+
+  #blog-title,
+  #blog-content {
+    width: 100%;
+  }
+
+  footer {
+    font-size: medium;
+    height: auto;
+    padding: 1em;
+  }
+}

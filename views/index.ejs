@@ -1,0 +1,75 @@
+<%- include("partials/header.ejs") %>
+
+    <div class="intro">
+        <h1>Welcome to blog posting app</h1>
+        <div class="intro-row">
+            <div class="left-side">
+                <p class="p1">Here you may:</p>
+                <ul>
+                    <li>Make a blog</li>
+                    <li>Read an existing blog</li>
+                    <li>Edit/delete one of your own blogs</li>
+                </ul>
+            </div>
+            <div class="right-side">
+                <p class="p2">Keep in mind that there is no database connected to this website, so the blogs won't
+                    stay
+                    saved once you
+                    leave the website.
+                    The purpose of the website is to showcase it's functionality.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="main-container">
+        <div class="table-of-contents">
+            <h3>List of posted blogs:</h3>
+            <ul>
+                <% blogs.forEach(element=> { %>
+                    <li>
+                        <a href="/<%= element.slug %>" id="blog-link">
+                            <%= element.title %>
+                        </a>
+                        <a href="/<%= element.slug %>/edit"><button class="blog-btn"><img width="50" height="50"
+                                    src="https://img.icons8.com/ios/50/create-new.png" alt="create-new" /></button></a>
+                        <form action="/<%= element.slug %>/delete" method="POST" style="display:inline;">
+                            <button type="submit" class="blog-btn"
+                                onclick="return confirm('Are you sure you want to delete this blog?')"><img width="50"
+                                    height="50" src="https://img.icons8.com/ios/50/trash--v1.png" alt="trash--v1" />
+                            </button>
+                        </form>
+                    </li>
+                    <% }); %>
+            </ul>
+        </div>
+        <div class="table-for-writing">
+            <% if (typeof error !=='undefined' ) {%>
+                <div class="error-box">
+                    <p class="error1">
+                        <%= error %>
+                    </p>
+                </div>
+                <% } %>
+
+                    <form action="<%= blogToEdit ? '/' + blogToEdit.slug+'/edit' : '/submit-blog' %>" method="POST"
+                        id="blogForm">
+                        <label for="blog-title">Title:</label><br>
+                        <input type="text" id="blog-title" name="title"
+                            value="<%= blogToEdit ? blogToEdit.title : (typeof title !== undefined ? title : "") %>"
+                            required><br><br>
+
+                        <label for="blog-content">Content:</label><br>
+                        <textarea id="blog-content" name="content" rows="10" cols="50"
+                            required><%= blogToEdit ? blogToEdit.content : (typeof content !== undefined ? content : "") %></textarea><br><br>
+
+                        <button type="submit" id="submit-button">Submit Blog</button>
+                    </form>
+
+        </div>
+    </div>
+
+
+    <%- include("partials/footer.ejs") %>

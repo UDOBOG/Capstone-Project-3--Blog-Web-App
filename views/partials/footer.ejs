@@ -1,0 +1,29 @@
+</main>
+<footer>
+  <!-- Step 4 - Add a dynamic year to the footer using JS. -->
+  <p>Copyright © <%= new Date().getFullYear() %>
+  </p>
+</footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function () {
+    const $box = $('.error-box');
+    let flashes = 0;
+
+    function flashBox() {
+      if (flashes >= 3) return;
+
+      $box.css('background-color', 'red');
+      setTimeout(() => {
+        $box.css('background-color', 'beige');
+        flashes++;
+        setTimeout(flashBox, 150);
+      }, 150);
+    }
+
+    flashBox();
+  });
+</script>
+
+</html>
